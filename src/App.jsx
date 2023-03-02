@@ -9,8 +9,7 @@ function App() {
   // States
   const [connection, setConnection] = useState(false);
   const [username, setUsername] = useState("Ivan");
-  const [color, setColor] = "red";
-
+  const [color, setColor] = useState('red')
   // Functions
   const handleToggleConnection = (e) => {
     e.preventDefault();
@@ -20,6 +19,10 @@ function App() {
   const handleUsernameInput = (e) => {
     setUsername(e.target.value);
   };
+
+  const handleColorSelect = (e) => {
+    setColor(e.target.value)
+  }
 
   return (
     <>
@@ -35,6 +38,7 @@ function App() {
           defaultRoomName={defaultRoomName}
           onConnect={handleToggleConnection}
           onUsernameInput={handleUsernameInput}
+          onColorSelect={handleColorSelect}
         />
       )}
 

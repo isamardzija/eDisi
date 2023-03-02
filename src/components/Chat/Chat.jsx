@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Messages } from "../index.js";
+import { Messages, SendMessage } from "../index.js";
 
 export default function Chat(props) {
   const { username, color, CHANNEL_ID, roomName, onDisconnectClick } = props;
@@ -10,8 +10,8 @@ export default function Chat(props) {
     // Create Scaledrone connection
     drone = new Scaledrone(CHANNEL_ID, {
       data: {
-        name: "testName",
-        color: "red",
+        name: username,
+        color: color,
       },
     });
     const room = drone.subscribe(roomName);
@@ -38,11 +38,17 @@ export default function Chat(props) {
 
   // Send new message
   function handleMessageSubmit(e) {
-    e.preventDefault()
-    drone.publish({
-      room: roomName,
-      message: e.target[0].value,
-    });
+    e.preventDefault();
+    try {
+      drone.publish({
+        room: roomName,
+        message: e.target[0].value,
+      });
+    } catch (error) {
+      return console.error(error);
+    }
+    e.target[0].value = "";
+
   }
 
   return (
@@ -56,12 +62,3 @@ export default function Chat(props) {
   );
 }
 
-function SendMessage(props) {
-  const { onMessageSubmit } = props;
-  return (
-    <form onSubmit={onMessageSubmit}>
-      <input type="text" name="new-message" id="new-message" />
-      <button type="submit">Send</button>
-    </form>
-  );
-}

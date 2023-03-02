@@ -1,5 +1,6 @@
 export default function Messages(props) {
   const { messages } = props;
+
   // Converts Scaledrone UNIX timestamp local time
   function convertTimestamp(timestamp) {
     const hours = new Date(timestamp * 1000).getHours();
@@ -13,7 +14,7 @@ export default function Messages(props) {
   return (
     <ul className="messages-container">
       {messages.map((message, index) => (
-        <li key={index}>
+        <li key={index} style={{color: message.member.clientData.color}}>
           {console.log(message)}
           <span className="message-text">{message.data}</span>
           <span className="message-author">

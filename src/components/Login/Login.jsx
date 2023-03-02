@@ -1,5 +1,5 @@
 export default function Login(props) {
-  const { connection, username, color, defaultChannelID, defaultRoomName, onConnect, onUsernameInput } = props;
+  const { connection, username, color, defaultChannelID, defaultRoomName, onConnect, onUsernameInput, onColorSelect } = props;
   return (
     <form onSubmit={onConnect}>
       {/* Channel ID */}
@@ -27,7 +27,7 @@ export default function Login(props) {
       <input required type="text" name="username" id="username" defaultValue={username} onChange={onUsernameInput} minLength={3} />
       <br />
       {/* Color  */}
-      <select name="color" id="color" >
+      <select name="color" id="color" onChange={onColorSelect} >
         <option value="red">Red</option>
         <option value="blue">Blue</option>
       </select>
