@@ -8,7 +8,6 @@ import { Login, Chat } from "./components";
 function App() {
   // States
   const [connection, setConnection] = useState(false);
-  const [messages, setMessages] = useState([]);
 
   // Functions
   const handleToggleConnection = (e) => {
