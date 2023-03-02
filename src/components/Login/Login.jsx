@@ -5,7 +5,7 @@ export default function Login(props) {
       {/* Channel ID */}
       <label htmlFor="channelID">Channel ID:</label>
       <input
-        disable
+        disabled
         type="text"
         name="channelID"
         id="channelID"
