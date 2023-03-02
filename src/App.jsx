@@ -4,12 +4,15 @@ import { useState } from "react";
 import { defaultChannelID, defaultRoomName } from "./config/config";
 // Components
 import { Login, Chat } from "./components";
+import { nouns, adjectives } from "./assets/words.json";
+import { colors } from "./assets/colors.json";
 
 function App() {
   // States
   const [connection, setConnection] = useState(false);
-  const [username, setUsername] = useState("Ivan");
-  const [color, setColor] = useState('red')
+  const [username, setUsername] = useState(generateRandomUsername());
+  const [color, setColor] = useState("red");
+
   // Functions
   const handleToggleConnection = (e) => {
     e.preventDefault();
@@ -21,9 +24,33 @@ function App() {
   };
 
   const handleColorSelect = (e) => {
-    setColor(e.target.value)
+    setColor(e.target.value);
+  };
+
+  function generateRandomUsername() {
+    const num1 = Math.floor(Math.random() * adjectives.length);
+    const num2 = Math.floor(Math.random() * nouns.length);
+    const randomUsername = adjectives[num1] + nouns[num2];
+    return randomUsername;
   }
 
+  function pickRandomColor() {
+    const num1 = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[num1]
+    return randomColor
+
+  }
+
+  function handleRandomClick() {
+    setUsername(generateRandomUsername());
+  }
+
+  function handleRandomColor(e) {
+    const randomColor = pickRandomColor()
+
+    e.target.previousElementSibling.value = randomColor
+    setColor(randomColor)
+  }
   return (
     <>
       <h1>eDisi</h1>
@@ -39,6 +66,8 @@ function App() {
           onConnect={handleToggleConnection}
           onUsernameInput={handleUsernameInput}
           onColorSelect={handleColorSelect}
+          onRandomClick={handleRandomClick}
+          onRandomSelect={handleRandomColor}
         />
       )}
 
