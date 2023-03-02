@@ -11,8 +11,13 @@ form.login > div {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  row-gap: var(--g-300);
   padding: var(--p-400);
   border-radius: var(--br-400);
   border: 1px solid var(--c-n-400-d);
+}
+
+form.login > div > label {
+  flex-basis: 100%;
+  text-align: center;
+  font-weight: var(--fw-700);
 }

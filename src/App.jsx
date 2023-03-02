@@ -4,8 +4,8 @@ import { useState } from "react";
 import { defaultChannelID, defaultRoomName } from "./config/config";
 // Components
 import { Login, Chat } from "./components";
-import { nouns, adjectives } from "./assets/words.json";
-import { colors } from "./assets/colors.json";
+import { nouns, adjectives } from "./assets/data/words.json";
+import { colors } from "./assets/data/colors.json";
 
 function App() {
   // States
@@ -47,8 +47,7 @@ function App() {
 
   function handleRandomColor(e) {
     const randomColor = pickRandomColor()
-
-    e.target.previousElementSibling.value = randomColor
+    e.target.parentElement.previousElementSibling.value = randomColor
     setColor(randomColor)
   }
   return (

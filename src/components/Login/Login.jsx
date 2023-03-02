@@ -1,5 +1,11 @@
-import { colors } from "../../assets/colors.json";
+import { colors } from "../../assets/data/colors.json";
 import "./login.css"
+
+import {ArrowRepeat} from "../Icons";
+
+const iconWidth = "32"
+const iconHeight = "32"
+const iconColor = "black"
 
 export default function Login(props) {
   const {
@@ -40,7 +46,7 @@ export default function Login(props) {
       </div>
       {/* Username */}
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Username:</label>
         <input
           required
           type="text"
@@ -51,19 +57,20 @@ export default function Login(props) {
           minLength={3}
         />
         <button type="button" onClick={onRandomClick}>
-          Randomize Username
+          <ArrowRepeat iconWidth={iconWidth} iconHeight={iconHeight} color={iconColor} / >
         </button>
       </div>
       {/* Color  */}
       <div>
+        <label htmlFor="color">Color:</label>
         <select
           style={{ backgroundColor: color, color: "white" }}
           name="color"
           id="color"
           onChange={onColorSelect}
         >
-          {colors.map((color) => (
-            <option
+          {colors.map((color, index) => (
+            <option key={index}
               style={{ backgroundColor: color, color: "white" }}
               value={color}
             >
@@ -72,7 +79,7 @@ export default function Login(props) {
           ))}
         </select>
         <button type="button" onClick={onRandomSelect}>
-          Randomize Color
+        <ArrowRepeat iconWidth={iconWidth} iconHeight={iconHeight} color={iconColor} / >
         </button>
       </div>
       {/* Submit */}

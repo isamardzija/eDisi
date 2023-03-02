@@ -5,11 +5,14 @@
   --ff-primary: "Golos Text", sans-serif;
 
   /* Font Sizes */
-
   --fs-300: 0.825rem;
   --fs-400: 1rem;
   --fs-500: 1.125rem;
   --fs-600: 1.25rem;
+
+  /* Font Weights */
+  --fw-400: 400;
+  --fw-700: 700;
 
   /* Colors */
   --c-n-400: #e7ecef;
@@ -20,16 +23,20 @@
   --p-300: 16px;
   --p-200: 12px;
   --p-100: 8px;
+  --p-50: 4px;  
 
   /* Gaps */
   --g-400: var(--p-400);
   --g-300: var(--p-300);
   --g-200: var(--p--200);
+  --g-100: var(--p-100)
 
   /* Border Radius */
   --br-400: 20px;
+  --br-200: 10px;
 }
 
+/* Base Styles */
 body {
   font-family: var(--ff-primary);
   font-size: var(--fs-600);
@@ -39,4 +46,14 @@ body {
 #root {
   max-width: 900px;
   margin: auto;
+}
+
+input[type=text], select, button {
+  padding: var(--p-50);
+  border-radius: var(--br-200);
+  border: 1px solid var(--c-n-400-d);
+}
+
+input[type=text]:is(:focus, :active) {
+  outline: transparent;
 }
