@@ -11,15 +11,3 @@
   
 }
 
-.message {
-    align-self: flex-end;
-}
-
-.message-text {}
-
-.message-author {
-}
-
-.message-timestamp {
-    font-size: var(--fs-300);
-}

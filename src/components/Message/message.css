@@ -1,0 +1,31 @@
+.message {
+    align-self: flex-end;
+    animation: appear 200ms linear;
+}
+
+.message-text {
+    padding: var(--p-200);
+    border-radius: var(--br-400);
+    display: block;
+
+}
+
+.message-author {
+    font-size: var(--fs-300);
+    padding-inline: var(--p-100) ;
+}
+
+.message-timestamp {
+    font-size: var(--fs-300);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+
+    }
+    to {
+        opacity: 100%;
+    }
+    
+}
