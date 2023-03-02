@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap");
+
+:root {
+  /* Font Family */
+  --ff-primary: "Golos Text", sans-serif;
+
+  /* Font Sizes */
+
+  --fs-300: 0.825rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+
+  /* Colors */
+  --c-n-400: #e7ecef;
+  --c-n-400-d: #272932;
+
+  /* Padding */
+  --p-400: 20px;
+  --p-300: 16px;
+
+  /* Gaps */
+  --g-400: var(--p-400);
+  --g-300: var(--p-300);
+
+  /* Border Radius */
+  --br-400: 20px;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-600);
+  background-color: var(--c-n-400);
+}
+
+#root {
+  max-width: 900px;
+  margin: auto;
+}

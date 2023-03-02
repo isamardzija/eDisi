@@ -1,0 +1,10 @@
+form.send-message {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--g-300);
+}
+
+form.send-message > * {
+  border-radius: var(--br-400);
+  border: 1px solid var(--c-n-400-d);
+}

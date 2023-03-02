@@ -1,4 +1,5 @@
 import { colors } from "../../assets/colors.json";
+import "./login.css"
 
 export default function Login(props) {
   const {
@@ -14,64 +15,68 @@ export default function Login(props) {
     onRandomSelect,
   } = props;
   return (
-    <form onSubmit={onConnect}>
+    <form className="login" onSubmit={onConnect}>
       {/* Channel ID */}
-      <label htmlFor="channelID">Channel ID:</label>
-      <input
-        disabled
-        type="text"
-        name="channelID"
-        id="channelID"
-        defaultValue={defaultChannelID}
-      />
-      <br />
+      <div>
+        <label htmlFor="channelID">Channel ID:</label>
+        <input
+          disabled
+          type="text"
+          name="channelID"
+          id="channelID"
+          defaultValue={defaultChannelID}
+        />
+      </div>
       {/* Room Name */}
-      <label htmlFor="roomName">Room Name:</label>
-      <input
-        required
-        type="text"
-        name="roomName"
-        id="roomName"
-        defaultValue={defaultRoomName}
-      />
-      <br />
+      <div>
+        <label htmlFor="roomName">Room Name:</label>
+        <input
+          required
+          type="text"
+          name="roomName"
+          id="roomName"
+          defaultValue={defaultRoomName}
+        />
+      </div>
       {/* Username */}
-      <label htmlFor="username">Username</label>
-      <input
-        required
-        type="text"
-        name="username"
-        id="username"
-        value={username}
-        onChange={onUsernameInput}
-        minLength={3}
-      />
-      <button type="button" onClick={onRandomClick}>
-        Randomize Username
-      </button>
-      <br />
+      <div>
+        <label htmlFor="username">Username</label>
+        <input
+          required
+          type="text"
+          name="username"
+          id="username"
+          value={username}
+          onChange={onUsernameInput}
+          minLength={3}
+        />
+        <button type="button" onClick={onRandomClick}>
+          Randomize Username
+        </button>
+      </div>
       {/* Color  */}
-      <select
-        style={{ backgroundColor: color, color: "white" }}
-        name="color"
-        id="color"
-        onChange={onColorSelect}
-      >
-        {colors.map((color) => (
-          <option
-            style={{ backgroundColor: color, color: "white" }}
-            value={color}
-          >
-            {color}
-          </option>
-        ))}
-      </select>
-      <button type="button" onClick={onRandomSelect}>
-        Randomize Color
-      </button>
-      <br />
+      <div>
+        <select
+          style={{ backgroundColor: color, color: "white" }}
+          name="color"
+          id="color"
+          onChange={onColorSelect}
+        >
+          {colors.map((color) => (
+            <option
+              style={{ backgroundColor: color, color: "white" }}
+              value={color}
+            >
+              {color}
+            </option>
+          ))}
+        </select>
+        <button type="button" onClick={onRandomSelect}>
+          Randomize Color
+        </button>
+      </div>
       {/* Submit */}
-      <button type="submit">{connection ? "Disconnect" : "Connect"}</button>
+      <div><button type="submit">{connection ? "Disconnect" : "Connect"}</button></div>
     </form>
   );
 }

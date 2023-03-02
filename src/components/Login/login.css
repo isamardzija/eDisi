@@ -1,0 +1,18 @@
+form.login {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--g-400);
+  padding: var(--p-400);
+}
+
+form.login > div {
+  flex: 1 1 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: var(--g-300);
+  padding: var(--p-400);
+  border-radius: var(--br-400);
+  border: 1px solid var(--c-n-400-d);
+}

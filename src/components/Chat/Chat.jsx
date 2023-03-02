@@ -54,13 +54,13 @@ export default function Chat(props) {
   }
 
   return (
-    <>
+    <main className="chat">
       <button type="button" onClick={onDisconnectClick}>
         Disconnect
       </button>
       <Messages messages={messages} username={username}></Messages>
       <SendMessage onMessageSubmit={handleMessageSubmit} />
-    </>
+    </main>
   );
 }
 
