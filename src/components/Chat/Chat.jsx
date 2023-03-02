@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { Messages, SendMessage } from "../index.js";
+import "./chat.css"
 
 export default function Chat(props) {
   const { username, color, CHANNEL_ID, roomName, onDisconnectClick } = props;
   const [messages, setMessages] = useState([]);
-  let drone;
+  const [drone, setDrone] = useState()
 
   useEffect(() => {
     // Create Scaledrone connection
-    drone = new Scaledrone(CHANNEL_ID, {
+    const drone = new Scaledrone(CHANNEL_ID, {
       data: {
         name: username,
         color: color,
       },
     });
+    setDrone(drone)
     const room = drone.subscribe(roomName);
 
     // Open a chatroom
@@ -47,7 +49,7 @@ export default function Chat(props) {
     } catch (error) {
       return console.error(error);
     }
-    e.target[0].value = "";
+    e.target[0].value = ""
 
   }
 
@@ -56,7 +58,7 @@ export default function Chat(props) {
       <button type="button" onClick={onDisconnectClick}>
         Disconnect
       </button>
-      <Messages messages={messages}></Messages>
+      <Messages messages={messages} username={username}></Messages>
       <SendMessage onMessageSubmit={handleMessageSubmit} />
     </>
   );
