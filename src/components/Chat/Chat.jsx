@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 export default function Chat(props) {
-  const { CHANNEL_ID, roomName, connection } = props;
+  const { CHANNEL_ID, roomName, connection, onDisconnectClick } = props;
   useEffect(() => {
 
     // Create Scaledrone connection
@@ -25,6 +25,7 @@ export default function Chat(props) {
   return (
     <>
       <h1>Welcome</h1>
+      <button type="button" onClick={onDisconnectClick}>Disconnect</button>
     </>
   );
 }
