@@ -29,7 +29,7 @@
   --g-400: var(--p-400);
   --g-300: var(--p-300);
   --g-200: var(--p--200);
-  --g-100: var(--p-100)
+  --g-100: var(--p-100);
 
   /* Border Radius */
   --br-400: 20px;
@@ -56,4 +56,8 @@ input[type=text], select, button {
 
 input[type=text]:is(:focus, :active) {
   outline: transparent;
+}
+
+.container {
+  border-radius: var(--br-200);
 }

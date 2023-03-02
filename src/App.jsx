@@ -11,7 +11,7 @@ function App() {
   // States
   const [connection, setConnection] = useState(false);
   const [username, setUsername] = useState(generateRandomUsername());
-  const [color, setColor] = useState("red");
+  const [color, setColor] = useState(pickRandomColor());
 
   // Functions
   const handleToggleConnection = (e) => {

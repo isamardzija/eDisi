@@ -23,7 +23,7 @@ export default function Login(props) {
   return (
     <form className="login" onSubmit={onConnect}>
       {/* Channel ID */}
-      <div>
+      <div className="container">
         <label htmlFor="channelID">Channel ID:</label>
         <input
           disabled
@@ -43,9 +43,9 @@ export default function Login(props) {
           id="roomName"
           defaultValue={defaultRoomName}
         />
-      </div>
+      </div >
       {/* Username */}
-      <div>
+      <div className="container">
         <label htmlFor="username">Username:</label>
         <input
           required
@@ -61,13 +61,14 @@ export default function Login(props) {
         </button>
       </div>
       {/* Color  */}
-      <div>
+      <div className="container">
         <label htmlFor="color">Color:</label>
         <select
           style={{ backgroundColor: color, color: "white" }}
           name="color"
           id="color"
           onChange={onColorSelect}
+          defaultValue={color}
         >
           {colors.map((color, index) => (
             <option key={index}
@@ -81,9 +82,9 @@ export default function Login(props) {
         <button type="button" onClick={onRandomSelect}>
         <ArrowRepeat iconWidth={iconWidth} iconHeight={iconHeight} color={iconColor} / >
         </button>
-      </div>
+      </div >
       {/* Submit */}
-      <div><button type="submit">{connection ? "Disconnect" : "Connect"}</button></div>
+      <div className="container"><button type="submit">{connection ? "Disconnect" : "Connect"}</button></div>
     </form>
   );
 }

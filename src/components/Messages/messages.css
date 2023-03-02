@@ -4,7 +4,6 @@
     row-gap: var(--g-400);
     padding: var(--p-400);
     border: 1px solid var(--c-n-400-d);
-    border-radius: var(--br-400);
     list-style-type: none;
     overflow: scroll;
     height: 550px

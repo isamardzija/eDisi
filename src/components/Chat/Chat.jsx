@@ -5,7 +5,7 @@ import "./chat.css"
 export default function Chat(props) {
   const { username, color, CHANNEL_ID, roomName, onDisconnectClick } = props;
   const [messages, setMessages] = useState([]);
-  const [drone, setDrone] = useState()
+  const [drone, setDrone] = useState(null);
 
   useEffect(() => {
     // Create Scaledrone connection

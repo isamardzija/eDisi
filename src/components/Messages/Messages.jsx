@@ -6,7 +6,7 @@ export default function Messages(props) {
   const { messages, username } = props;
 
   return (
-    <ul className="messages-container">
+    <ul className="messages-container container">
       {messages.map((message, index) => (
         <Message message={message} index={index} username={username} />
       ))}

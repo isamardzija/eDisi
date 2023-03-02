@@ -12,7 +12,6 @@ form.login > div {
   justify-content: center;
   align-items: center;
   padding: var(--p-400);
-  border-radius: var(--br-400);
   border: 1px solid var(--c-n-400-d);
 }
 
