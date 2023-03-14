@@ -1,0 +1,6 @@
+.fontSize-container > span {
+    display: inline-block;
+    font-size: var(--fs-400);
+    padding-inline: var(--p-50);
+    
+}

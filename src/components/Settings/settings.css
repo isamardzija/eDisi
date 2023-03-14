@@ -1,0 +1,12 @@
+dialog {
+    width: 100%;
+    margin: auto;
+    padding: var(--p-400);
+    background-color: var(--c-n-400);
+    border: 3px solid var(--c-n-400-d);
+    border-radius: var(--br-400);
+}
+
+dialog > * {
+    margin-block: var(--p-400)
+}

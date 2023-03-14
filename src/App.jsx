@@ -3,7 +3,7 @@ import { useState } from "react";
 // Config
 import { defaultChannelID, defaultRoomName } from "./config/config";
 // Components
-import { Login, Chat } from "./components";
+import { Login, Chat, Settings } from "./components";
 import { nouns, adjectives } from "./assets/data/words.json";
 import { colors } from "./assets/data/colors.json";
 
@@ -12,6 +12,8 @@ function App() {
   const [connection, setConnection] = useState(false);
   const [username, setUsername] = useState(generateRandomUsername());
   const [color, setColor] = useState(pickRandomColor());
+  const [fontSize, setFontSize] = useState("")
+
 
   // Functions
   const handleToggleConnection = (e) => {
@@ -36,9 +38,8 @@ function App() {
 
   function pickRandomColor() {
     const num1 = Math.floor(Math.random() * colors.length);
-    const randomColor = colors[num1]
-    return randomColor
-
+    const randomColor = colors[num1];
+    return randomColor;
   }
 
   function handleRandomClick() {
@@ -46,13 +47,18 @@ function App() {
   }
 
   function handleRandomColor(e) {
-    const randomColor = pickRandomColor()
-    e.target.parentElement.previousElementSibling.value = randomColor
-    setColor(randomColor)
+    const randomColor = pickRandomColor();
+    e.target.parentElement.previousElementSibling.value = randomColor;
+    setColor(randomColor);
+  }
+
+  const handleFontSizeChange = (e) => {
+    setFontSize(e.target.value)
   }
   return (
     <>
       <h1>eDisi</h1>
+      <Settings fontSize={fontSize} onFontSizeChange={handleFontSizeChange} />
 
       {/* If not connected, show Login component */}
       {!connection && (
@@ -78,6 +84,7 @@ function App() {
           CHANNEL_ID={defaultChannelID}
           roomName={defaultRoomName}
           onDisconnectClick={handleToggleConnection}
+          fontSize={fontSize}
         />
       )}
     </>

@@ -3,7 +3,7 @@ import { Messages, SendMessage } from "../index.js";
 import "./chat.css"
 
 export default function Chat(props) {
-  const { username, color, CHANNEL_ID, roomName, onDisconnectClick } = props;
+  const { username, color, CHANNEL_ID, roomName, onDisconnectClick, fontSize } = props;
   const [messages, setMessages] = useState([]);
   const [drone, setDrone] = useState(null);
 
@@ -58,7 +58,7 @@ export default function Chat(props) {
       <button type="button" onClick={onDisconnectClick}>
         Disconnect
       </button>
-      <Messages messages={messages} username={username}></Messages>
+      <Messages messages={messages} username={username} fontSize={fontSize}></Messages>
       <SendMessage onMessageSubmit={handleMessageSubmit} />
     </main>
   );
