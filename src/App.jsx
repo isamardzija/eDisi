@@ -1,5 +1,5 @@
 // React
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 // Config
 import { defaultChannelID, defaultRoomName } from "./config/config";
 // Components
@@ -12,9 +12,38 @@ function App() {
   const [connection, setConnection] = useState(false);
   const [username, setUsername] = useState(generateRandomUsername());
   const [color, setColor] = useState(pickRandomColor());
-  const [fontSize, setFontSize] = useState("")
-  const [avatar, setAvatar] = useState(`https://robohash.org/${username}`)
+  const [fontSize, setFontSize] = useState("");
+  const [avatar, setAvatar] = useState(`https://robohash.org/${username}`);
+  const [colorLight, setColorLight] = useState(
+    getComputedStyle(document.documentElement).getPropertyValue("--c-n-400")
+  );
+  const [colorDark, setColorDark] = useState(
+    getComputedStyle(document.documentElement).getPropertyValue("--c-n-400-d")
+  );
+  const [darkTheme, setDarkTheme] = useState(false);
 
+  const handleThemeToggle = () => {
+    console.log(darkTheme);
+    {
+      darkTheme
+        ? (() => {
+            document.documentElement.style.setProperty("--c-n-400", colorLight);
+            document.documentElement.style.setProperty(
+              "--c-n-400-d",
+              colorDark
+            );
+            setDarkTheme(false);
+          })()
+        : (() => {
+            document.documentElement.style.setProperty("--c-n-400", colorDark);
+            document.documentElement.style.setProperty(
+              "--c-n-400-d",
+              colorLight
+            );
+            setDarkTheme(true);
+          })();
+    }
+  };
 
   // Functions
   const handleToggleConnection = (e) => {
@@ -45,8 +74,7 @@ function App() {
 
   function handleRandomClick() {
     setUsername(generateRandomUsername());
-    setAvatar(`https://robohash.org/${username}`)
-
+    setAvatar(`https://robohash.org/${username}`);
   }
 
   function handleRandomColor(e) {
@@ -56,12 +84,17 @@ function App() {
   }
 
   const handleFontSizeChange = (e) => {
-    setFontSize(e.target.value)
-  }
+    setFontSize(e.target.value);
+  };
   return (
     <>
       <h1>eDisi</h1>
-      <Settings fontSize={fontSize} onFontSizeChange={handleFontSizeChange} />
+      <Settings
+        fontSize={fontSize}
+        onFontSizeChange={handleFontSizeChange}
+        darkTheme={darkTheme}
+        onThemeToggle={handleThemeToggle}
+      />
 
       {/* If not connected, show Login component */}
       {!connection && (

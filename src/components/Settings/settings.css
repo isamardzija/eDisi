@@ -1,12 +1,19 @@
 dialog {
-    width: 100%;
-    margin: auto;
-    padding: var(--p-400);
-    background-color: var(--c-n-400);
-    border: 3px solid var(--c-n-400-d);
-    border-radius: var(--br-400);
+  max-width: 600px;
+  margin: auto;
+  padding: var(--p-400);
+  background-color: var(--c-n-400);
+  color: var(--c-n-400-d);
+  border: 3px solid var(--c-n-400-d);
+  border-radius: var(--br-400);
 }
 
-dialog > * {
-    margin-block: var(--p-400)
+dialog > div {
+  margin-block: var(--p-400);
+  display: flex;
+  align-items: center;
+  gap: var(--g-400);
+  border: 3px solid var(--c-n-400-d);
+  border-radius: var(--br-400);
+  padding: var(--p-400);
 }
