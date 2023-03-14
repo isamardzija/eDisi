@@ -4,6 +4,8 @@ eDisi is a real time chat web application for both desktop and mobile devices. U
 
 **Live Demo:**
 
+https://edisi.netlify.app/
+
 ## How It's Made
 
 The user interface is built using React. 
