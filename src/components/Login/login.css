@@ -10,7 +10,7 @@ form.login > div {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: var(--p-400);
+  padding: var(--p-200);
   border: 1px solid var(--c-n-400-d);
   border-radius: var(--br-400);
 }
