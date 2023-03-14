@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useState, useRef } from "react";
 // Config
 import { defaultChannelID, defaultRoomName } from "./config/config";
 // Components
@@ -13,6 +13,7 @@ function App() {
   const [username, setUsername] = useState(generateRandomUsername());
   const [color, setColor] = useState(pickRandomColor());
   const [fontSize, setFontSize] = useState("")
+  const [avatar, setAvatar] = useState(`https://robohash.org/${username}`)
 
 
   // Functions
@@ -44,6 +45,8 @@ function App() {
 
   function handleRandomClick() {
     setUsername(generateRandomUsername());
+    setAvatar(`https://robohash.org/${username}`)
+
   }
 
   function handleRandomColor(e) {
@@ -73,6 +76,7 @@ function App() {
           onColorSelect={handleColorSelect}
           onRandomClick={handleRandomClick}
           onRandomSelect={handleRandomColor}
+          avatar={avatar}
         />
       )}
 
@@ -85,6 +89,7 @@ function App() {
           roomName={defaultRoomName}
           onDisconnectClick={handleToggleConnection}
           fontSize={fontSize}
+          avatar={avatar}
         />
       )}
     </>

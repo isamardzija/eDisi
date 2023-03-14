@@ -64,3 +64,10 @@ input[type=text]:is(:focus, :active) {
 .container {
   border-radius: var(--br-200);
 }
+button:hover {
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+}

@@ -1,7 +1,9 @@
 import { colors } from "../../assets/data/colors.json";
 import "./login.css"
 
+import Avatar from "boring-avatars";
 import {ArrowRepeat} from "../Icons";
+
 
 const iconWidth = "32"
 const iconHeight = "32"
@@ -18,9 +20,10 @@ export default function Login(props) {
     onUsernameInput,
     onColorSelect,
     onRandomClick,
-    onRandomSelect,
+    onRandomSelect, avatar
   } = props;
   return (
+    
     <form className="login" onSubmit={onConnect}>
       {/* Channel ID */}
       <div className="container">
@@ -46,6 +49,8 @@ export default function Login(props) {
       </div >
       {/* Username */}
       <div className="container">
+      <img className="avatar" src={avatar}  />
+
         <label htmlFor="username">Username:</label>
         <input
           required

@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import "./message.css";
 
 export default function Message(props) {
-  const { message, index, username, fontSize } = props;
+  const { message, index, username, fontSize, avatar } = props;
   const scrollMessage = useRef(null);
 
   useEffect(() => {
@@ -31,15 +31,29 @@ export default function Message(props) {
             : "flex-start",
       }}
     >
-      <span
-        className="message-text"
+      <div
+        className="message-bubble"
         style={{
-          backgroundColor: message.member.clientData.color,
-          fontSize: `${fontSize}px`,
+          flexDirection:
+            username === message.member.clientData.name
+              ? "row"
+              : "row-reverse",
         }}
       >
-        {message.data}
-      </span>
+        <span
+          className="message-text"
+          style={{
+            backgroundColor: message.member.clientData.color,
+            fontSize: `${fontSize}px`,
+          }}
+        >
+          {message.data}
+        </span>
+        <img
+          className="avatar"
+          src={`https://robohash.org/${message.member.clientData.name}`}
+        />
+      </div>
       <span className="message-author">{message.member.clientData.name}</span>
       <span className="message-timestamp">
         {convertTimestamp(message.timestamp)}

@@ -3,11 +3,19 @@
     animation: appear 200ms linear;
 }
 
+.message-bubble {
+    display: flex;
+}
+
 .message-text {
     padding: var(--p-200);
     border-radius: var(--br-400);
-    display: block;
+    width: 100%;
 
+}
+
+.avatar {
+    height: 40px;
 }
 
 .message-author {
