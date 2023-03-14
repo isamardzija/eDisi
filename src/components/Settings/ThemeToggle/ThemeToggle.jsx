@@ -6,7 +6,7 @@ export default function ThemeToggle(props) {
   return (
     <div className="themeToggle-container">
       <label htmlFor="themeToggle">Switch to {darkTheme ? "light" : "dark"} theme</label>
-      <button id="themeToggle" onClick={onThemeToggle}>{darkTheme ? <Moon /> : <Sun />}</button>
+      <button id="themeToggle" onClick={onThemeToggle}>{darkTheme ? <Sun /> : <Moon />}</button>
     </div>
   );
 }

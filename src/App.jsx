@@ -13,7 +13,7 @@ function App() {
   const [username, setUsername] = useState(generateRandomUsername());
   const [color, setColor] = useState(pickRandomColor());
   const [fontSize, setFontSize] = useState("");
-  const [avatar, setAvatar] = useState(`https://robohash.org/${username}`);
+  const [avatar, setAvatar] = useState(`https://robohash.org/edisi`);
   const [colorLight, setColorLight] = useState(
     getComputedStyle(document.documentElement).getPropertyValue("--c-n-400")
   );
@@ -71,12 +71,14 @@ function App() {
   function pickRandomColor() {
     const num1 = Math.floor(Math.random() * colors.length);
     const randomColor = colors[num1];
+
     return randomColor;
   }
 
   function handleRandomClick() {
     setUsername(generateRandomUsername());
     setAvatar(`https://robohash.org/${username}`);
+
   }
 
   function handleRandomColor(e) {
@@ -98,6 +100,7 @@ function App() {
         darkTheme={darkTheme}
         onThemeToggle={handleThemeToggle}
         onDisconnectClick={handleToggleConnection}
+        connection={connection}
       />
 
       {/* If not connected, show Login component */}

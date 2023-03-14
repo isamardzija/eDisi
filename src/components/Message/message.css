@@ -1,39 +1,37 @@
 .message {
-    align-self: flex-end;
-    animation: appear 200ms linear;
+  align-self: flex-end;
+  animation: appear 200ms linear;
 }
 
 .message-bubble {
-    display: flex;
+  display: flex;
 }
 
 .message-text {
-    padding: var(--p-200);
-    border-radius: var(--br-400);
-    width: 100%;
-
+  padding: var(--p-200);
+  border-radius: var(--br-400);
+  width: 100%;
+  color: white !important;
 }
 
 .avatar {
-    height: 40px;
+  height: 40px;
 }
 
 .message-author {
-    font-size: var(--fs-300);
-    padding-inline: var(--p-100) ;
+  font-size: var(--fs-300);
+  padding-inline: var(--p-100);
 }
 
 .message-timestamp {
-    font-size: var(--fs-300);
+  font-size: var(--fs-300);
 }
 
 @keyframes appear {
-    from {
-        opacity: 0%;
-
-    }
-    to {
-        opacity: 100%;
-    }
-    
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
