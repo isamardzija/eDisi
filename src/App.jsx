@@ -6,7 +6,6 @@ import { defaultChannelID, defaultRoomName } from "./config/config";
 import { Login, Chat, Settings } from "./components";
 import { nouns, adjectives } from "./assets/data/words.json";
 import { colors } from "./assets/data/colors.json";
-import "./app.css";
 
 function App() {
   // States
