@@ -2,6 +2,5 @@ main.chat {
     display: flex;
     flex-direction: column;
     row-gap: var(--g-400);
-    padding-inline: var(--p-400);
     width: 100%;
 }

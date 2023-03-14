@@ -52,14 +52,21 @@ body {
 #root {
   max-width: 900px;
   margin: auto;
+  padding: var(--p-400);
 }
+
 
 input[type=text], select, button {
   padding: var(--p-50);
   border-radius: var(--br-200);
   border: 1px solid var(--c-n-400-d);
+  background-color: var(--c-n-400-d);
+  color: var(--c-n-400);
 }
-
+input[type=text] {
+  background-color: white;
+  color:#272932;
+}
 input[type=text]:is(:focus, :active) {
   outline: transparent;
 }

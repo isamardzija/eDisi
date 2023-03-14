@@ -13,7 +13,7 @@ dialog > div {
   display: flex;
   align-items: center;
   gap: var(--g-400);
-  border: 3px solid var(--c-n-400-d);
+  border: 1px solid var(--c-n-400-d);
   border-radius: var(--br-400);
   padding: var(--p-400);
 }

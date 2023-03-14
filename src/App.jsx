@@ -1,11 +1,12 @@
 // React
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 // Config
 import { defaultChannelID, defaultRoomName } from "./config/config";
 // Components
 import { Login, Chat, Settings } from "./components";
 import { nouns, adjectives } from "./assets/data/words.json";
 import { colors } from "./assets/data/colors.json";
+import "./app.css";
 
 function App() {
   // States
@@ -21,6 +22,7 @@ function App() {
     getComputedStyle(document.documentElement).getPropertyValue("--c-n-400-d")
   );
   const [darkTheme, setDarkTheme] = useState(false);
+  const settings = useRef(null);
 
   const handleThemeToggle = () => {
     console.log(darkTheme);
@@ -49,6 +51,7 @@ function App() {
   const handleToggleConnection = (e) => {
     e.preventDefault();
     setConnection((connection) => !connection);
+    settings.current.close()
   };
 
   const handleUsernameInput = (e) => {
@@ -90,10 +93,12 @@ function App() {
     <>
       <h1>eDisi</h1>
       <Settings
+        settings={settings}
         fontSize={fontSize}
         onFontSizeChange={handleFontSizeChange}
         darkTheme={darkTheme}
         onThemeToggle={handleThemeToggle}
+        onDisconnectClick={handleToggleConnection}
       />
 
       {/* If not connected, show Login component */}
@@ -120,9 +125,9 @@ function App() {
           color={color}
           CHANNEL_ID={defaultChannelID}
           roomName={defaultRoomName}
-          onDisconnectClick={handleToggleConnection}
           fontSize={fontSize}
           avatar={avatar}
+          connection={connection}
         />
       )}
     </>

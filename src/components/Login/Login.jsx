@@ -1,13 +1,12 @@
 import { colors } from "../../assets/data/colors.json";
-import "./login.css"
+import "./login.css";
 
 import Avatar from "boring-avatars";
-import {ArrowRepeat} from "../Icons";
+import { ArrowRepeat } from "../Icons";
 
-
-const iconWidth = "32"
-const iconHeight = "32"
-const iconColor = "black"
+const iconWidth = "32";
+const iconHeight = "32";
+const iconColor = "black";
 
 export default function Login(props) {
   const {
@@ -20,10 +19,10 @@ export default function Login(props) {
     onUsernameInput,
     onColorSelect,
     onRandomClick,
-    onRandomSelect, avatar
+    onRandomSelect,
+    avatar,
   } = props;
   return (
-    
     <form className="login" onSubmit={onConnect}>
       {/* Channel ID */}
       <div className="container">
@@ -46,10 +45,10 @@ export default function Login(props) {
           id="roomName"
           defaultValue={defaultRoomName}
         />
-      </div >
+      </div>
       {/* Username */}
       <div className="container">
-      <img className="avatar" src={avatar}  />
+        <img className="avatar" src={avatar} />
 
         <label htmlFor="username">Username:</label>
         <input
@@ -62,7 +61,11 @@ export default function Login(props) {
           minLength={3}
         />
         <button type="button" onClick={onRandomClick}>
-          <ArrowRepeat iconWidth={iconWidth} iconHeight={iconHeight} color={iconColor} / >
+          <ArrowRepeat
+            iconWidth={iconWidth}
+            iconHeight={iconHeight}
+            color={iconColor}
+          />
         </button>
       </div>
       {/* Color  */}
@@ -76,7 +79,8 @@ export default function Login(props) {
           defaultValue={color}
         >
           {colors.map((color, index) => (
-            <option key={index}
+            <option
+              key={index}
               style={{ backgroundColor: color, color: "white" }}
               value={color}
             >
@@ -85,11 +89,17 @@ export default function Login(props) {
           ))}
         </select>
         <button type="button" onClick={onRandomSelect}>
-        <ArrowRepeat iconWidth={iconWidth} iconHeight={iconHeight} color={iconColor} / >
+          <ArrowRepeat
+            iconWidth={iconWidth}
+            iconHeight={iconHeight}
+            color={iconColor}
+          />
         </button>
-      </div >
+      </div>
       {/* Submit */}
-      <div className="container"><button type="submit">{connection ? "Disconnect" : "Connect"}</button></div>
+      <div className="container">
+        <button type="submit">{connection ? "Disconnect" : "Connect"}</button>
+      </div>
     </form>
   );
 }

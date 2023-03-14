@@ -5,7 +5,6 @@ export default function FontSize(props) {
   return (
     <div className="fontSize-container">
       <label htmlFor="fontsize">Change font size:</label>
-      <span>({fontSize}px)</span>
       <input
         type="range"
         name="fontsize"

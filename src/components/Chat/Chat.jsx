@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Messages, SendMessage } from "../index.js";
-import "./chat.css"
+import "./chat.css";
 
 export default function Chat(props) {
-  const { username, color, CHANNEL_ID, roomName, onDisconnectClick, fontSize, avatar } = props;
+  const { username, color, CHANNEL_ID, roomName, fontSize, avatar } = props;
   const [messages, setMessages] = useState([]);
   const [drone, setDrone] = useState(null);
 
@@ -15,7 +15,7 @@ export default function Chat(props) {
         color: color,
       },
     });
-    setDrone(drone)
+    setDrone(drone);
     const room = drone.subscribe(roomName);
 
     // Open a chatroom
@@ -45,23 +45,23 @@ export default function Chat(props) {
       drone.publish({
         room: roomName,
         message: e.target[0].value,
-        avatar: avatar
+        avatar: avatar,
       });
     } catch (error) {
       return console.error(error);
     }
-    e.target[0].value = ""
-
+    e.target[0].value = "";
   }
 
   return (
     <main className="chat">
-      <button type="button" onClick={onDisconnectClick}>
-        Disconnect
-      </button>
-      <Messages messages={messages} username={username} fontSize={fontSize} avatar={avatar}></Messages>
+      <Messages
+        messages={messages}
+        username={username}
+        fontSize={fontSize}
+        avatar={avatar}
+      ></Messages>
       <SendMessage onMessageSubmit={handleMessageSubmit} />
     </main>
   );
 }
-

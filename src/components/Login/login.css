@@ -2,7 +2,6 @@ form.login {
   display: flex;
   flex-wrap: wrap;
   row-gap: var(--g-400);
-  padding: var(--p-400);
 }
 
 form.login > div {
@@ -13,10 +12,15 @@ form.login > div {
   align-items: center;
   padding: var(--p-400);
   border: 1px solid var(--c-n-400-d);
+  border-radius: var(--br-400);
 }
 
 form.login > div > label {
   flex-basis: 100%;
   text-align: center;
   font-weight: var(--fw-700);
+}
+
+form.login input {
+  max-width: 300px;
 }

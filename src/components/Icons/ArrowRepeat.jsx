@@ -3,9 +3,9 @@ export default function ArrowRepeat(props) {
 return (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={iconWidth}
-    height={iconHeight}
-    fill={iconColor}
+    width="32"
+    height="32"
+    fill="currentColor"
     className="bi bi-arrow-repeat"
     viewBox="0 0 16 16"
   >
