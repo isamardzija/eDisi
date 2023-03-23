@@ -7,13 +7,17 @@ eDisi is a real time chat web application for both desktop and mobile devices. U
 https://edisi.netlify.app/
 
 ## How It's Made
+ - **React** - frontend
+ - **Scalerone API** - backend/database
 
-The user interface is built using React. 
-On the back end, eDisi uses Scaledrone's API.
 
 ## Features
+
+### Completed
  - Recieve and send text messages in real time
  - Randomly generates usernames and assigns the colors of the chat bubbles for each user
- - Play a notification sound for every new message
  - Switch themes between light and dark
  - Increase or decrease the font size for every message for easier readability
+
+### To Do
+ - Play a notification sound for every new message
